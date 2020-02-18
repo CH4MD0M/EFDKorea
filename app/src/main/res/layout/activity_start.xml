@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.t_project.StartActivity">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/startButton"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="150dp"
+        android:background="@drawable/start" />
+
+</LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="411dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="#E5E5E7"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="593dp"
+            android:layout_height="214dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="35dp"
+            android:gravity="center_vertical"
+            android:text="Welcome!"
+            android:textSize="120dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/flowText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Please Click Image"
+            android:textSize="40dp" />
+
+    </LinearLayout>
+
+
+
+
+</RelativeLayout>

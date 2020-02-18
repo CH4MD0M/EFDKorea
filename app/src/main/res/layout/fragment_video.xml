@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/frame"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#585858">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <VideoView
+            android:id="@+id/videoview"
+            android:layout_width="match_parent"
+            android:layout_height="564dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="60dp"
+            android:layout_marginBottom="1dp" />
+
+
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left|bottom"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="70dp"
+        android:textColor="#F5DA81"
+        android:textSize="24sp" />
+
+
+    <TextView
+        android:id="@+id/EndText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right|bottom"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="70dp"
+        android:hint="Max"
+        android:textColor="#F5DA81"
+        android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/playpauseButton"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/ic_play_circle_outline_black_24dp"
+        android:textSize="10dp" />
+
+    <Button
+        android:id="@+id/prevButton"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        android:layout_marginRight="200dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/ic_fast_rewind_black_24dp"
+        android:textSize="20dp"
+        android:visibility="visible" />
+
+    <Button
+        android:id="@+id/nextButton"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="200dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/ic_fast_forward_black_24dp"
+        android:textSize="20dp"
+        android:visibility="visible" />
+
+
+    <SeekBar
+        android:id="@+id/SeekBar"
+        android:layout_width="match_parent"
+        android:layout_height="79dp"
+        android:layout_alignParentStart="true"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="10dp"
+        android:progress="0" />
+
+
+    <LinearLayout
+        android:id="@+id/page"
+        android:layout_width="match_parent"
+        android:layout_height="430dp"
+        android:layout_gravity="bottom"
+        android:background="#585858"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+
+
+        <ListView
+            android:id="@+id/listView1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="bottom"
+            android:background="#EFFBF8"
+            android:textAlignment="center"></ListView>
+
+
+    </LinearLayout>
+
+
+
+
+</FrameLayout>
