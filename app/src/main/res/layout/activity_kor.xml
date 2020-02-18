@@ -1,15 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#3C3939">
 
     <TextView
-        android:id="@+id/textView2"
-        android:layout_width="246dp"
-        android:layout_height="81dp"
-        android:text="korean"
-        tools:layout_editor_absoluteX="286dp"
-        tools:layout_editor_absoluteY="522dp" />
-</android.support.constraint.ConstraintLayout>
+        android:id="@+id/Title"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="68dp"
+        android:background="@drawable/efd_title"
+        android:gravity="center"
+        android:textColorHint="#111111"
+        android:textSize="100sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/grade1"
+        android:layout_width="500dp"
+        android:layout_height="140dp"
+        android:layout_below="@id/Title"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="10dp"
+        
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/g1_button"
+        android:lines="30"
+        android:text="@string/g1_button"
+        android:textColor="#00FFFFFF"
+        android:textSize="50sp" />
+
+    <Button
+        android:id="@+id/grade2"
+        android:layout_width="500dp"
+        android:layout_height="140dp"
+        android:layout_below="@+id/grade1"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+
+        android:background="@drawable/g2_button"
+        android:lines="30"
+        android:text="@string/g2_button"
+        android:textColor="#00FFFFFF"
+        android:textSize="50sp" />
+
+    <Button
+        android:id="@+id/grade3"
+        android:layout_width="500dp"
+        android:layout_height="140dp"
+        android:layout_below="@+id/grade2"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="10dp"
+
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/g3_button"
+        android:lines="30"
+        android:text="@string/g3_button"
+        android:textColor="#00FFFFFF"
+        android:textSize="50sp" />
+
+    <Button
+        android:id="@+id/grade4"
+        android:layout_width="500dp"
+        android:layout_height="140dp"
+        android:layout_below="@+id/grade3"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+
+        android:background="@drawable/g4_button"
+        android:lines="30"
+        android:text="@string/g4_button"
+        android:textColor="#00FFFFFF"
+        android:textSize="50sp" />
+
+    <Button
+        android:id="@+id/grade5"
+        android:layout_width="500dp"
+        android:layout_height="140dp"
+        android:layout_below="@+id/grade4"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="10dp"
+
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/g5_button"
+        android:lines="30"
+        android:text="@string/g5_button"
+        android:textColor="#00FFFFFF"
+        android:textSize="50sp" />
+
+
+
+</RelativeLayout>
