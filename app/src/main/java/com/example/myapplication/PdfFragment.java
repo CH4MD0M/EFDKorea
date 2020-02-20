@@ -37,26 +37,27 @@ public class PdfFragment extends Fragment
         Intent intent = getActivity().getIntent();
         PDFView pdfView = (PDFView) rootView.findViewById(R.id.pdfview);
 
-        final String GradeNumber = intent.getStringExtra("L_Grade"); // GradeNumber 호출
-        final String SubjectNumber = intent.getStringExtra("L_Subject"); // SubjectNumber 호출
+        final String Language = intent.getStringExtra("L_Language"); //Language 호출
+        final String GradeCode = intent.getStringExtra("L_Grade"); // GradeNumber 호출
+        final String SubjectCode = intent.getStringExtra("L_Subject"); // SubjectNumber 호출
         final String MediaNumber = intent.getStringExtra("MediaNumber"); // MediaNumber 호출
 
-        final String[] Testchar = {GradeNumber, SubjectNumber,  MediaNumber};
-        String gradename, medianame  = " ";
+        final String[] Testchar = {GradeCode, SubjectCode,  MediaNumber};
+        String gradecode, medianame  = " ";
 
-        if(Testchar[0].equals("GRADE1")){ gradename = "1"; }
-        else if(Testchar[0].equals("GRADE2")){gradename = "2";}
-        else if(Testchar[0].equals("GRADE3")){gradename = "3";}
-        else if(Testchar[0].equals("GRADE4")){gradename = "4";}
-        else if(Testchar[0].equals("GRADE5")){gradename = "5";}
-        else  {gradename = "6";}
+        if(Testchar[0].equals("GRADE1")){ gradecode = "1"; }
+        else if(Testchar[0].equals("GRADE2")){gradecode = "2";}
+        else if(Testchar[0].equals("GRADE3")){gradecode = "3";}
+        else if(Testchar[0].equals("GRADE4")){gradecode = "4";}
+        else if(Testchar[0].equals("GRADE5")){gradecode = "5";}
+        else  {gradecode = "6";}
 
         medianame = MediaNumber.replaceAll("[^0-9]","");
 
         //TODO-------------------------------------------------------------------------------------------------------------------------------------------------------
 
         //TODO [PDF] 경로
-        String PdfPath = "/storage/0000-0000/" + GradeNumber + "/" + SubjectNumber + "/" + "PDF" + "/" + "Lesson" + gradename + "-" + medianame + ".pdf";
+        String PdfPath = "/storage/0000-0000/" + Language + "/" + GradeCode + "/" + SubjectCode + "/" + "PDF" + "/" + "Lesson" + gradecode + "-" + medianame + ".pdf";
 
         //TODO-------------------------------------------------------------------------------------------------------------------------------------------------------
 

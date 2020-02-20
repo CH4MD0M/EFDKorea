@@ -55,7 +55,7 @@ public class StartActivity extends AppCompatActivity {
             @Override
             public void onClick(View view){
 
-                Intent start = new Intent(StartActivity.this,GradeActivity.class);
+                Intent start = new Intent(StartActivity.this,LanguageActivity.class);
                 StartActivity.this.startActivity(start);
             }
         });

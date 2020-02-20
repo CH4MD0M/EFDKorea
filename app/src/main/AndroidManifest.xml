@@ -14,14 +14,10 @@
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity
-            android:name=".GradeActivity"
-            android:label="@string/title_activity_grade"
-            android:theme="@style/AppTheme.NoActionBar.NoActionBar"></activity>
-        <activity
-            android:name=".GmanageActivity"
-            android:label="@string/title_activity_gmanage"
-            android:theme="@style/AppTheme.NoActionBar.NoActionBar" />
+        <activity android:name=".LanguageActivity"></activity>
+
+        <activity android:name=".EnglishActivity"></activity>
+        <activity android:name=".KoreanActivity"></activity>
         <activity
             android:name=".SplashActivity"
             android:screenOrientation="portrait"
@@ -32,10 +28,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".RegisterActivity" />
+        <activity android:name=".EngSubjectActivity"></activity>
+        <activity android:name=".KorSubjectActivity"></activity>
+
         <activity android:name=".StartActivity" />
-        <activity android:name=".SubjectActivity" />
         <activity android:name=".ListActivity" />
         <activity
             android:name=".TabActivity"

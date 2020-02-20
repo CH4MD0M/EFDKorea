@@ -27,6 +27,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.VideoView;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
@@ -87,35 +89,41 @@ public class VideoFragment extends Fragment {
 
         final Intent intent = getActivity().getIntent();
         // TODO 전 LIST에서 받은 변수....
-        final String GradeNumber = intent.getStringExtra("L_Grade"); // GradeNumber 호출
-        final String SubjectNumber = intent.getStringExtra("L_Subject"); // SubjectNumber 호출
+        final String Language = intent.getStringExtra("L_Language");
+        final String GradeCode = intent.getStringExtra("L_Grade"); // GradeNumber 호출
+        final String SubjectCode = intent.getStringExtra("L_Subject"); // SubjectNumber 호출
         final String MediaNumber = intent.getStringExtra("MediaNumber");
 
 
         // TODO 배열로 받은 함수들 처리...
 
-        final String[] Testchar = {GradeNumber, SubjectNumber,  MediaNumber};
-        String gradename, subjectname, medianame  = "";
+        final String[] Testchar = {GradeCode, SubjectCode,  MediaNumber};
+        String gradecode, subjectcode, medianame  = "";
 
-        if(Testchar[0].equals("GRADE1")){ gradename = "1st"; } // equal 함수는 한꺼번에 검색 contains 함수는 일부분 검색
-        else if (Testchar[0].contains("GRADE2")){ gradename = "2nd"; }
-        else if (Testchar[0].contains("GRADE3")){ gradename = "3rd"; }
-        else if (Testchar[0].contains("GRADE4")){ gradename = "4th"; }
-        else if (Testchar[0].contains("GRADE5")){ gradename = "5th"; }
-        else { gradename = "6th"; }
+        if(Testchar[0].equals("GRADE1")){ gradecode = "1st"; } // equal 함수는 한꺼번에 검색 contains 함수는 일부분 검색
+        else if (Testchar[0].contains("GRADE2")){ gradecode = "2nd"; }
+        else if (Testchar[0].contains("GRADE3")){ gradecode = "3rd"; }
+        else if (Testchar[0].contains("GRADE4")){ gradecode = "4th"; }
+        else if (Testchar[0].contains("GRADE5")){ gradecode = "5th"; }
+        else { gradecode = "6th"; }
 
-        if(Testchar[1].contains("MATHMATHICS")){ subjectname="matE"; }
-        else if (Testchar[1].contains("SCIENCE")){ subjectname="sciE"; }
-        else {subjectname="engE";}
+        if(Testchar[1].contains("ENGLISH")){ subjectcode="engL"; }
+        else if (Testchar[1].contains("SCIENCE")){ subjectcode="sciE"; }
+        else if (Testchar[1].contains("MATHMATHICS")){subjectcode="matE";}
+        else if(Testchar[1].contains("BASIC")){subjectcode="basI";}
+        else if(Testchar[1].contains("INTERMEDIATE")){subjectcode="intE";}
+        else{subjectcode="advA";}
         medianame = MediaNumber.replaceAll("[^0-9]","");
+
 
         //TODO-------------------------------------------------------------------------------------------------------------------------------------------------------
 
         //TODO 테스트 경로
-        String handtitle="storage/0000-0000/" + GradeNumber + "/" + SubjectNumber + "/" +gradename + "_" + subjectname + "_" + medianame + ".mp4";
+        String VideoPath="storage/0000-0000/" + Language + "/"  + GradeCode + "/" + SubjectCode + "/" + gradecode + "_" + subjectcode + "_" + medianame + ".wmv";
 
 
         //TODO-------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
 
         seekBar.getProgressDrawable().setColorFilter(Color.YELLOW, PorterDuff.Mode.SRC_IN);
@@ -125,7 +133,7 @@ public class VideoFragment extends Fragment {
 
         ListView listview = (ListView) rootView.findViewById(R.id.listView1);
         listview.setAdapter(aa);
-        videoView.setVideoPath(handtitle);
+        videoView.setVideoPath(VideoPath);
         videoView.seekTo(0);
         videoView.requestFocus();
         videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {

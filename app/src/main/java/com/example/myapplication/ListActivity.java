@@ -44,8 +44,10 @@ public class ListActivity extends AppCompatActivity {
 
 
         Intent intent = getIntent();
-        final String GradeNumber = intent.getStringExtra("R_GradeNumber");
-        final String SubjectNumber = intent.getStringExtra("SubjectNumber");
+        final String Language = intent.getStringExtra("R2_Language");
+        final String GradeCode = intent.getStringExtra("R_GradeCode");
+        final String SubjectCode = intent.getStringExtra("SubjectCode");
+
 
 
 
@@ -55,9 +57,9 @@ public class ListActivity extends AppCompatActivity {
 
 
         // [태블릿용] 동영상 경로
-        String VideoPath= "storage/0000-0000/" + GradeNumber + "/" + SubjectNumber;
+        String VideoPath= "storage/0000-0000/" + Language + "/" + GradeCode + "/" + SubjectCode;
         // [태블릿용] 강의명(subtitle) 경로
-        String SubtitlePath= "storage/0000-0000/" + GradeNumber + "/" + SubjectNumber + "/" + "subtitle";
+        String SubtitlePath= "storage/0000-0000/" + Language + "/" + GradeCode + "/" + SubjectCode + "/" + "subtitle";
 
         //TODO-------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -66,36 +68,43 @@ public class ListActivity extends AppCompatActivity {
         File[] files = directory.listFiles(new FileFilter() {
             @Override
             public boolean accept(File pathname) {
-                return pathname.getName().toLowerCase(Locale.US).endsWith(".mp4");
+                return pathname.getName().toLowerCase(Locale.US).endsWith(".wmv");
             }
         });
 
-        final String[] Testchar = {GradeNumber, SubjectNumber};
-        String gradename, subjectname = "";
+        final String[] Testchar = {GradeCode, SubjectCode};
+        String  gradecode, subjectcode = "";
 
-        if(Testchar[0].equals("GRADE1")){ gradename = "1st"; } // equal 함수는 한꺼번에 검색 contains 함수는 일부분 검색
-        else if (Testchar[0].contains("GRADE2")){ gradename = "2nd"; }
-        else if (Testchar[0].contains("GRADE3")){ gradename = "3rd"; }
-        else if (Testchar[0].contains("GRADE4")){ gradename = "4th"; }
-        else if (Testchar[0].contains("GRADE5")){ gradename = "5th"; }
-        else { gradename = "6th"; }
 
-        if(Testchar[1].contains("MATHMATHICS")){ subjectname="matE"; }
-        else if (Testchar[1].contains("SCIENCE")){ subjectname="sciE"; }
-        else {subjectname="engE";}
 
-        String Synopurl = SubtitlePath+"/"+gradename+"_"+subjectname+"_";
+        if(Testchar[0].equals("GRADE1")){ gradecode = "1st"; } // equal 함수는 한꺼번에 검색 contains 함수는 일부분 검색
+        else if (Testchar[0].contains("GRADE2")){ gradecode = "2nd"; }
+        else if (Testchar[0].contains("GRADE3")){ gradecode = "3rd"; }
+        else if (Testchar[0].contains("GRADE4")){ gradecode = "4th"; }
+        else if (Testchar[0].contains("GRADE5")){ gradecode = "5th"; }
+        else { gradecode = "6th"; }
+
+        if(Testchar[1].contains("ENGLISH")){ subjectcode="engL"; }
+        else if (Testchar[1].contains("SCIENCE")){ subjectcode="sciE"; }
+        else if (Testchar[1].contains("MATHMATHICS")){subjectcode="matE";}
+        else if(Testchar[1].contains("BASIC")){subjectcode="basI";}
+        else if(Testchar[1].contains("INTERMEDIATE")){subjectcode="intE";}
+        else{subjectcode="advA";}
+
+        String Synopurl = SubtitlePath+"/"+gradecode+"_"+subjectcode+"_";
+
+        TextView textView = (TextView)findViewById(R.id.test);
+        textView.setText(Synopurl);
 
 
         for (int num=1; num<=files.length; num++)
         {
-            LiStore.add(new ListStore("Chapter "+ num, ""+ReadTextFile(Synopurl+num+".txt"),""+num,""+SubjectNumber));
+            LiStore.add(new ListStore("Chapter "+ num, ""+ReadTextFile(Synopurl+num+".txt"),""+num,""+SubjectCode));
         }
 
         MyAdapter adapter = new MyAdapter(
                 getApplicationContext(), //현재화면의 제어권자
-                R.layout.row,
-                LiStore);
+                R.layout.row, LiStore);
         final ListView lvmovies = findViewById(R.id.listView1);
         lvmovies.setAdapter(adapter);
         lvmovies.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -105,15 +114,12 @@ public class ListActivity extends AppCompatActivity {
                 // 1. 다음화면 만든다.
                 // 2. AndroidManifest.xml 에 화면을 등록할 것.
                 // 3. Intent 객체를 생성하여 만든다.
-                Intent intent = new Intent(
-                        getApplicationContext(),
-                        TabActivity.class
-                );
-
+                Intent intent = new Intent(getApplicationContext(), TabActivity.class);
 
                 intent.putExtra("MediaNumber", LiStore.get(position).title);
-                intent.putExtra("L_Subject",SubjectNumber);
-                intent.putExtra("L_Grade",GradeNumber);
+                intent.putExtra("L_Language",Language);
+                intent.putExtra("L_Subject",SubjectCode);
+                intent.putExtra("L_Grade",GradeCode);
                 startActivity(intent);
 
             }

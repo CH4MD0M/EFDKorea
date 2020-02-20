@@ -1,10 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.t_project.SubjectActivity"
     android:background="#ffffff">
 
     <LinearLayout
@@ -24,7 +22,7 @@
         <TextView
             android:id="@+id/textView1"
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="200dp"
             android:background="@drawable/efd_title"
             android:gravity="center"
             android:textColorHint="#111111"
@@ -38,9 +36,9 @@
             <Button
                 android:id="@+id/button1"
                 android:layout_width="match_parent"
-                android:layout_height="300dp"
-                android:background="@drawable/eng_button"
-                android:text="ENGLISH"
+                android:layout_height="355dp"
+                android:background="@drawable/basic_button"
+                android:text="BASIC"
                 android:textColor="#00FFFFFF"
                 android:textSize="95dp" />
         </LinearLayout>
@@ -52,9 +50,9 @@
             <Button
                 android:id="@+id/button2"
                 android:layout_width="match_parent"
-                android:layout_height="300dp"
-                android:background="@drawable/math_button"
-                android:text="MATHMATHICS"
+                android:layout_height="355dp"
+                android:background="@drawable/inter_button"
+                android:text="INTERMEDIATE"
                 android:textAllCaps="false"
                 android:textColor="#00FFFFFF"
                 android:textSize="95dp" />
@@ -67,9 +65,9 @@
             <Button
                 android:id="@+id/button3"
                 android:layout_width="match_parent"
-                android:layout_height="300dp"
-                android:background="@drawable/sci_button"
-                android:text="SCIENCE"
+                android:layout_height="355dp"
+                android:background="@drawable/advance_button"
+                android:text="ADVANCE"
                 android:textAllCaps="false"
                 android:textColor="#00FFFFFF"
                 android:textColorHighlight="#009E4E4E"

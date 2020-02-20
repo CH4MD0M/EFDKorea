@@ -53,14 +53,6 @@ public class TabActivity extends AppCompatActivity {
         setContentView(R.layout.activity_tab);
 
 
-        Intent intent = getIntent();
-        final String GradeNumber = intent.getStringExtra("L_Grade"); // GradeNumber 호출
-        final String SubjectNumber = intent.getStringExtra("L_Subject"); // SubjectNumber 호출
-        final String MediaNumber = intent.getStringExtra("MediaNumber");//MediaNumber 호출
-
-        TextView textView = (TextView)findViewById(R.id.textView1);
-        textView.setText(GradeNumber+"-'"+SubjectNumber+"-"+MediaNumber);
-
 
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);

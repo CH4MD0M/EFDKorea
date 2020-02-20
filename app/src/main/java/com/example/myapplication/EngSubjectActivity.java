@@ -3,21 +3,21 @@ package com.example.myapplication;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 
-public class SubjectActivity extends AppCompatActivity {
+public class EngSubjectActivity extends AppCompatActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate( Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.activity_subject);
-
+        setContentView(R.layout.activity_subject_eng);
 
         Intent intent1 = getIntent();
         //GradeActivity의 GradeNumber를 받아와
@@ -69,5 +69,6 @@ public class SubjectActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
     }
 }
