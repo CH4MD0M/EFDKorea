@@ -1,0 +1,57 @@
+.header {
+  height: 95vh;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-primary-light, 0.8),
+      rgba($color-primary-dark, 0.8)
+    ),
+    url(../img/hero-small.jpg);
+  background-size: cover;
+  background-position: top;
+  position: relative;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+
+  @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+    // safari에서의 지원을 위한 설정.
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  }
+
+  @media only screen and (min-resolution: 192dpi) and (min-width: 37.5em/* 600px / 16px */),
+    only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em/* 600px / 16px */),
+    /* safari에서 min-resolution을 지원하지 않아서 -webkit-(min/max) -device-pixel-ratio를 사용한다. */ only screen and (min-width: 125em/* 2000px / 16px */) {
+    // dpi: dot per inch;가 높아도 width 600px 밑에서는 hero-small이 출력됨.
+    // 작은 화면에서 고해상도의 이미지를 불러오지 않기 위해 and를 사용하여 (min-width: 600px)를 추가한 것.
+    background-image: linear-gradient(
+        to right bottom,
+        rgba($color-secondary-light, 0.8),
+        rgba($color-secondary-dark, 0.8)
+      ),
+      url(../img/hero.jpg);
+  }
+
+  @include respond(phone) {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+  }
+
+  &__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem;
+  }
+
+  &__logo {
+    height: 3.5rem;
+    /* height만 입력해도 브라우저에서 width를 계산 함. */
+  }
+
+  &__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+}
